@@ -12,6 +12,7 @@
 
 @interface CommentSectionController ()
 @property (nonatomic, copy)NSString *commentText;
+@property (nonatomic, strong) NSArray *commentArray;
 @end
 
 @implementation CommentSectionController
@@ -27,7 +28,7 @@
 
 - (NSInteger)numberOfItems
 {
-    return 1;
+    return 2.0; // user: comment
 }
 
 - (CGSize)sizeForItemAtIndex:(NSInteger)index
@@ -44,15 +45,29 @@
 -(UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index
 {
     
-    //TODO: ask if this works
+    //TODO: THIS IS WHERE WE DETERMINED WHAT TYPE OF ITEM IT IS:
     //need to ask collection view to give us cell
     //IGListKit ask adapter for the cell
-    //
+    //we'll have an index 0 and 1, 0 is user, 1 is comment text
+    
+    //Class cellClass = index==0? CommentViewCell: CommentViewCell;
+    
     CommentViewCell *commentCell = [self.collectionContext dequeueReusableCellOfClass:CommentViewCell.class forSectionController:self atIndex:index];
-    [commentCell setComment:self.commentText];
-    commentCell.contentView.backgroundColor = [UIColor whiteColor];
-    //commentCell.text = @"hello";
-    return commentCell;
+    
+    
+    if (index ==0){ //USER
+        [commentCell setComment:self.commentText];
+        commentCell.contentView.backgroundColor = [UIColor grayColor];
+        
+        return commentCell;
+    }
+    else { //COMMENT TEXT
+
+        [commentCell setComment:self.commentText];
+        commentCell.contentView.backgroundColor = [UIColor whiteColor];
+    
+        return commentCell;
+    }
 }
 
 //data model
@@ -61,6 +76,8 @@
 {
     //TODO: what do i do with object
     self.commentText = object;
+    //self.commentArray = object;
+    
     
 }
 

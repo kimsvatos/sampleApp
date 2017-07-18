@@ -37,10 +37,15 @@
     return self;
 }
 
+-(void)setUpLayout {
+    
+}
+
+
 - (void)setupSubviews {
     
     self.commentLabel = [[UILabel alloc] init];
-    self.commentLabel.textColor = [UIColor redColor];
+    self.commentLabel.textColor = [UIColor blackColor];
     self.commentLabel.textAlignment = NSTextAlignmentLeft;
     self.commentLabel.font = [UIFont systemFontOfSize:11];
     [self.contentView addSubview:self.commentLabel];

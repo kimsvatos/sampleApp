@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "CommentLoader.h"
 #import "CommentSectionController.h"
 @import IGListKit;
 @import YogaKit;
@@ -18,15 +19,14 @@
 @interface ViewController () <IGListAdapterDataSource>
 @property(nonatomic, strong) UICollectionView * collectionView;
 @property(nonatomic, strong, readonly) IGListAdapter * adapter;
-// instance of this owns, piece of info
-// method is telingsomething to do somethign
+@property(nonatomic, strong) CommentLoader* loader;
 @end
 
 @implementation ViewController
 
 - (instancetype)init {
     if (self = [super init]) {
-        
+        self.loader = [CommentLoader init];
     }
     return self;
 }
@@ -38,8 +38,19 @@
     self.collectionView = [[UICollectionView alloc] initWithFrame: self.view.bounds
                                              collectionViewLayout: [[UICollectionViewFlowLayout alloc] init]];
     
-    //TODO: changed background color to see?
-    self.collectionView.backgroundColor = UIColor.grayColor;
+
+    //self.collectionView.backgroundColor = UIColor.grayColor;
+    const CGFloat topPadding = 0.0;
+    const CGFloat sidePadding = 0.0;
+    self.collectionView.backgroundColor = UIColor.lightGrayColor;
+    [self.collectionView configureLayoutWithBlock:^(YGLayout *layout) {
+        layout.isEnabled = YES;
+        layout.marginTop = YGPointValue(topPadding);
+        layout.marginLeft  = YGPointValue(sidePadding);
+        layout.flexDirection = YGFlexDirectionRow;
+       
+    }];
+    
     
     [self.view addSubview:self.collectionView];
     _adapter = [[IGListAdapter alloc] initWithUpdater:[IGListAdapterUpdater new] viewController:self];
@@ -62,7 +73,17 @@
 
 //"hey which objects do i get to use"
 - (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter{
-    return @[@"What time is it? Summertime, its our vacation", @"Coming out of my cage and i been feeling just fine", @"all the small things, truth cares, truth brings", @"So baby hold me closer in the backseat of your rover that I know you can't afford", @"lemme take a selfie #live", @"Hakuna Matata, What a wonderful phrase"];
+    
+    //QUESTION: what are these usually? JSON? array of json? one by one (eg pic, text, user, etc?)
+    //return self.loader.comments;
+    NSMutableArray *items;
+    //items = items + self.loader.comments as [IGListDiffable];
+    //for(int i = 0; i <5; i++){
+    //    [items addObject:[self.loader.comments[0].user];
+    //
+//}
+    //return self.loader.comments;
+    return @[@"My prada's at the dry cleaners", @"You dont have to study, you go to BU", @"You know whats cool? A billion dollars", @"drop the the. just facebook. cleaner that way. ", @"I didn't know you couldnt feed a chicken chicken", @"U have the minimum amount of my attention"];
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object{

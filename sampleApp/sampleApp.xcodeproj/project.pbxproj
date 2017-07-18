@@ -10,6 +10,8 @@
 		24C4CD5075C435F8567BBA27 /* Pods_sampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3B23250CAC0EB9EB22430F9 /* Pods_sampleAppUITests.framework */; };
 		B53A9BEE1F1E4A1F00B6298E /* CommentSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A9BED1F1E4A1F00B6298E /* CommentSectionController.m */; };
 		B53A9BF11F1E5DBC00B6298E /* CommentViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A9BF01F1E5DBC00B6298E /* CommentViewCell.m */; };
+		B53A9BF51F1EA5FC00B6298E /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A9BF41F1EA5FC00B6298E /* CommentModel.m */; };
+		B53A9BF91F1EA86E00B6298E /* CommentLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B53A9BF81F1EA86E00B6298E /* CommentLoader.m */; };
 		B59073EC1F192B3900EF1B85 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B59073EB1F192B3900EF1B85 /* main.m */; };
 		B59073EF1F192B3900EF1B85 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B59073EE1F192B3900EF1B85 /* AppDelegate.m */; };
 		B59073F21F192B3900EF1B85 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B59073F11F192B3900EF1B85 /* ViewController.m */; };
@@ -52,6 +54,10 @@
 		B53A9BED1F1E4A1F00B6298E /* CommentSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentSectionController.m; sourceTree = "<group>"; };
 		B53A9BEF1F1E5DBC00B6298E /* CommentViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewCell.h; sourceTree = "<group>"; };
 		B53A9BF01F1E5DBC00B6298E /* CommentViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewCell.m; sourceTree = "<group>"; };
+		B53A9BF31F1EA5FC00B6298E /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		B53A9BF41F1EA5FC00B6298E /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		B53A9BF71F1EA86E00B6298E /* CommentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentLoader.h; sourceTree = "<group>"; };
+		B53A9BF81F1EA86E00B6298E /* CommentLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentLoader.m; sourceTree = "<group>"; };
 		B59073E71F192B3900EF1B85 /* sampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59073EB1F192B3900EF1B85 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B59073ED1F192B3900EF1B85 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,9 +118,30 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B53A9BF21F1EA59B00B6298E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B53A9BF31F1EA5FC00B6298E /* CommentModel.h */,
+				B53A9BF41F1EA5FC00B6298E /* CommentModel.m */,
+			);
+			name = Models;
+			path = sampleApp;
+			sourceTree = "<group>";
+		};
+		B53A9BF61F1EA83400B6298E /* Systems */ = {
+			isa = PBXGroup;
+			children = (
+				B53A9BF71F1EA86E00B6298E /* CommentLoader.h */,
+				B53A9BF81F1EA86E00B6298E /* CommentLoader.m */,
+			);
+			name = Systems;
+			sourceTree = "<group>";
+		};
 		B59073DE1F192B3900EF1B85 = {
 			isa = PBXGroup;
 			children = (
+				B53A9BF61F1EA83400B6298E /* Systems */,
+				B53A9BF21F1EA59B00B6298E /* Models */,
 				B59073E91F192B3900EF1B85 /* sampleApp */,
 				B59074031F192B3900EF1B85 /* sampleAppTests */,
 				B590740E1F192B3900EF1B85 /* sampleAppUITests */,
@@ -472,7 +499,9 @@
 			files = (
 				B59073F21F192B3900EF1B85 /* ViewController.m in Sources */,
 				B53A9BF11F1E5DBC00B6298E /* CommentViewCell.m in Sources */,
+				B53A9BF91F1EA86E00B6298E /* CommentLoader.m in Sources */,
 				B53A9BEE1F1E4A1F00B6298E /* CommentSectionController.m in Sources */,
+				B53A9BF51F1EA5FC00B6298E /* CommentModel.m in Sources */,
 				B59073EF1F192B3900EF1B85 /* AppDelegate.m in Sources */,
 				B59073EC1F192B3900EF1B85 /* main.m in Sources */,
 			);
