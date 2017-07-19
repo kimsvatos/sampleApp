@@ -52,8 +52,8 @@
 		A3B23250CAC0EB9EB22430F9 /* Pods_sampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B53A9BEC1F1E4A1F00B6298E /* CommentSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentSectionController.h; sourceTree = "<group>"; };
 		B53A9BED1F1E4A1F00B6298E /* CommentSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentSectionController.m; sourceTree = "<group>"; };
-		B53A9BEF1F1E5DBC00B6298E /* CommentViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentViewCell.h; sourceTree = "<group>"; };
-		B53A9BF01F1E5DBC00B6298E /* CommentViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentViewCell.m; sourceTree = "<group>"; };
+		B53A9BEF1F1E5DBC00B6298E /* CommentViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentViewCell.h; path = sampleApp/CommentViewCell.h; sourceTree = "<group>"; };
+		B53A9BF01F1E5DBC00B6298E /* CommentViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentViewCell.m; path = sampleApp/CommentViewCell.m; sourceTree = "<group>"; };
 		B53A9BF31F1EA5FC00B6298E /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
 		B53A9BF41F1EA5FC00B6298E /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
 		B53A9BF71F1EA86E00B6298E /* CommentLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentLoader.h; sourceTree = "<group>"; };
@@ -65,9 +65,9 @@
 		B59073F01F192B3900EF1B85 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B59073F11F192B3900EF1B85 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B59073F41F192B3900EF1B85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B59073F61F192B3900EF1B85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B59073F61F192B3900EF1B85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = sampleApp/Assets.xcassets; sourceTree = "<group>"; };
 		B59073F91F192B3900EF1B85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B59073FB1F192B3900EF1B85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B59073FB1F192B3900EF1B85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = sampleApp/Info.plist; sourceTree = "<group>"; };
 		B59074001F192B3900EF1B85 /* sampleAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sampleAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B59074041F192B3900EF1B85 /* sampleAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sampleAppTests.m; sourceTree = "<group>"; };
 		B59074061F192B3900EF1B85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,9 +137,42 @@
 			name = Systems;
 			sourceTree = "<group>";
 		};
+		B53A9BFA1F1FEFCE00B6298E /* SectionControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B53A9BEC1F1E4A1F00B6298E /* CommentSectionController.h */,
+				B53A9BED1F1E4A1F00B6298E /* CommentSectionController.m */,
+			);
+			name = SectionControllers;
+			path = sampleApp;
+			sourceTree = "<group>";
+		};
+		B53A9BFB1F1FEFFE00B6298E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B53A9BEF1F1E5DBC00B6298E /* CommentViewCell.h */,
+				B53A9BF01F1E5DBC00B6298E /* CommentViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		B53A9BFC1F1FF01B00B6298E /* misc */ = {
+			isa = PBXGroup;
+			children = (
+				B59073F31F192B3900EF1B85 /* Main.storyboard */,
+				B59073F61F192B3900EF1B85 /* Assets.xcassets */,
+				B59073F81F192B3900EF1B85 /* LaunchScreen.storyboard */,
+				B59073FB1F192B3900EF1B85 /* Info.plist */,
+			);
+			name = misc;
+			sourceTree = "<group>";
+		};
 		B59073DE1F192B3900EF1B85 = {
 			isa = PBXGroup;
 			children = (
+				B53A9BFC1F1FF01B00B6298E /* misc */,
+				B53A9BFB1F1FEFFE00B6298E /* Cells */,
+				B53A9BFA1F1FEFCE00B6298E /* SectionControllers */,
 				B53A9BF61F1EA83400B6298E /* Systems */,
 				B53A9BF21F1EA59B00B6298E /* Models */,
 				B59073E91F192B3900EF1B85 /* sampleApp */,
@@ -168,14 +201,6 @@
 				B59073EE1F192B3900EF1B85 /* AppDelegate.m */,
 				B59073F01F192B3900EF1B85 /* ViewController.h */,
 				B59073F11F192B3900EF1B85 /* ViewController.m */,
-				B53A9BEF1F1E5DBC00B6298E /* CommentViewCell.h */,
-				B53A9BF01F1E5DBC00B6298E /* CommentViewCell.m */,
-				B59073F31F192B3900EF1B85 /* Main.storyboard */,
-				B59073F61F192B3900EF1B85 /* Assets.xcassets */,
-				B59073F81F192B3900EF1B85 /* LaunchScreen.storyboard */,
-				B59073FB1F192B3900EF1B85 /* Info.plist */,
-				B53A9BEC1F1E4A1F00B6298E /* CommentSectionController.h */,
-				B53A9BED1F1E4A1F00B6298E /* CommentSectionController.m */,
 				B59073EA1F192B3900EF1B85 /* Supporting Files */,
 			);
 			path = sampleApp;
@@ -545,6 +570,7 @@
 				B59073F41F192B3900EF1B85 /* Base */,
 			);
 			name = Main.storyboard;
+			path = sampleApp;
 			sourceTree = "<group>";
 		};
 		B59073F81F192B3900EF1B85 /* LaunchScreen.storyboard */ = {
@@ -553,6 +579,7 @@
 				B59073F91F192B3900EF1B85 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = sampleApp;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

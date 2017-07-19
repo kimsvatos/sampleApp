@@ -25,20 +25,28 @@
     CommentModel* comm2 = [CommentModel new];
     CommentModel* comm3 = [CommentModel new];
     CommentModel* comm4 = [CommentModel new];
-    CommentModel* comm5 = [CommentModel new];
+    //CommentModel* comm5 = [CommentModel new];
     
     comm1.user = @"hodor";
-    comm1.text = @"hodor";
-    comm2.user = @"kimsvatos";
-    comm2.text = @"It's my first week at FB";
+    comm1.text = @"hodor hodor";
+    comm1.date = nil;
+    comm2.user = @"dany";
+    comm2.text = @"#motherofdragons #motherofdragons #motherofdragons #motherofdragons #motherofdragons #motherofdragons #motherofdragons #motherofdragons";
+    comm2.date = nil;
+    
     comm3.user = @"jonsnow";
     comm3.text = @"you know nothing";
+    comm3.date = nil;
+    
     comm4.user = @"aryastark";
     comm4.text = @"gonna go kill the queen brb";
-    comm5.user = @"cersei";
-    comm5.text = @"h8 u all";
+    comm4.date = nil;
     
-    self.comments = @[comm1, comm2, comm3, comm4, comm5];
+   // comm5.user = @"cersei";
+    //comm5.text = @"h8 u all";
+    //comm5.date = nil;
+    
+    self.comments = @[comm1, comm2, comm3, comm4];
     return self;
 }
 

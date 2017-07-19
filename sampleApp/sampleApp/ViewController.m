@@ -51,7 +51,7 @@
        
     }];
     
-    
+    //SETUP
     [self.view addSubview:self.collectionView];
     _loader = [CommentLoader new];
     _adapter = [[IGListAdapter alloc] initWithUpdater:[IGListAdapterUpdater new] viewController:self];
@@ -77,7 +77,6 @@
     
     //QUESTION: what are these usually? JSON? array of json? one by one (eg pic, text, user, etc?)
     return (NSArray<id <IGListDiffable>> *) self.loader.comments;
-    
     
 }
 

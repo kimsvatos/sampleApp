@@ -12,6 +12,7 @@
 @interface CommentModel : NSObject
 @property(nonatomic, strong) NSString * _Nonnull user;
 @property(nonatomic, strong) NSString * _Nonnull text;
+@property(nonatomic, strong) NSDate * _Nullable date;
 - (nonnull id<NSObject>)diffIdentifier;
 - (BOOL)isEqualToDiffableObject:(nullable id<IGListDiffable>)object;
 @end

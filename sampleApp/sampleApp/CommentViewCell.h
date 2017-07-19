@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface CommentViewCell : UICollectionViewCell
-@property (nonatomic, copy) NSString* comment;
-
+//@property (nonatomic, copy) NSString* commentUser;
+//@property (nonatomic, copy) NSString* commentText;
+-(void)setCommentUser:(NSString *)user CommentText:(NSString *)comment;
+-(void)setComment:(NSString *)comment;
 //what you can see, can define properties, methods (instance and class)
 //public api
 
