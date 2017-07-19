@@ -7,12 +7,13 @@
 //
 
 #import "CommentSectionController.h"
+#import "CommentModel.h"
 #import "CommentViewCell.h"
 @import IGListKit;
 
 @interface CommentSectionController ()
 @property (nonatomic, copy)NSString *commentText;
-@property (nonatomic, strong) NSArray *commentArray;
+@property (nonatomic, strong) NSMutableArray<CommentModel *> *commentArray;
 @end
 
 @implementation CommentSectionController
@@ -20,6 +21,7 @@
 - (instancetype)init {
     if (self = [super init]) {
         self.inset = UIEdgeInsetsMake(15, 0, 0, 0);
+        self.commentArray = [NSMutableArray<CommentModel *> new];
     }
     return self;
 }
@@ -34,9 +36,6 @@
 - (CGSize)sizeForItemAtIndex:(NSInteger)index
 {
     CGSize containerSize = self.collectionContext.containerSize;
-    
-    //TODO: change height to something real
-    
     return CGSizeMake(containerSize.width, 25.0);
 }
 
@@ -54,16 +53,16 @@
     
     CommentViewCell *commentCell = [self.collectionContext dequeueReusableCellOfClass:CommentViewCell.class forSectionController:self atIndex:index];
     
-    
-    if (index ==0){ //USER
-        [commentCell setComment:self.commentText];
+    NSInteger zero = 0;
+    if (index == zero){ //USER
+        [commentCell setComment:self.commentArray[0].user];
         commentCell.contentView.backgroundColor = [UIColor grayColor];
         
         return commentCell;
     }
     else { //COMMENT TEXT
 
-        [commentCell setComment:self.commentText];
+        [commentCell setComment:self.commentArray[0].text];
         commentCell.contentView.backgroundColor = [UIColor whiteColor];
     
         return commentCell;
@@ -71,13 +70,11 @@
 }
 
 //data model
-//
 - (void)didUpdateToObject:(id)object
 {
-    //TODO: what do i do with object
-    self.commentText = object;
-    //self.commentArray = object;
+   
     
+    [self.commentArray addObject:(object)];
     
 }
 

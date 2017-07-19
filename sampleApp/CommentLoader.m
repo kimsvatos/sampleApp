@@ -21,7 +21,12 @@
 -(instancetype)init {
     
     self = [super init];
-    CommentModel* comm1, *comm2, *comm3, *comm4, *comm5;
+    CommentModel* comm1 = [CommentModel new];
+    CommentModel* comm2 = [CommentModel new];
+    CommentModel* comm3 = [CommentModel new];
+    CommentModel* comm4 = [CommentModel new];
+    CommentModel* comm5 = [CommentModel new];
+    
     comm1.user = @"hodor";
     comm1.text = @"hodor";
     comm2.user = @"kimsvatos";

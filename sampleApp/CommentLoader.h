@@ -11,6 +11,6 @@
 
 @interface CommentLoader : NSObject
 
-@property(nonatomic, strong) NSArray* comments;
+@property(nonatomic, strong) NSArray<CommentModel *> *comments;
 
 @end

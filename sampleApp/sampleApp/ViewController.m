@@ -26,7 +26,7 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.loader = [CommentLoader init];
+   //     self.loader = [CommentLoader init];
     }
     return self;
 }
@@ -53,6 +53,7 @@
     
     
     [self.view addSubview:self.collectionView];
+    _loader = [CommentLoader new];
     _adapter = [[IGListAdapter alloc] initWithUpdater:[IGListAdapterUpdater new] viewController:self];
     self.adapter.collectionView = self.collectionView;
     self.adapter.dataSource = self;
@@ -75,15 +76,9 @@
 - (NSArray<id <IGListDiffable>> *)objectsForListAdapter:(IGListAdapter *)listAdapter{
     
     //QUESTION: what are these usually? JSON? array of json? one by one (eg pic, text, user, etc?)
-    //return self.loader.comments;
-    NSMutableArray *items;
-    //items = items + self.loader.comments as [IGListDiffable];
-    //for(int i = 0; i <5; i++){
-    //    [items addObject:[self.loader.comments[0].user];
-    //
-//}
-    //return self.loader.comments;
-    return @[@"My prada's at the dry cleaners", @"You dont have to study, you go to BU", @"You know whats cool? A billion dollars", @"drop the the. just facebook. cleaner that way. ", @"I didn't know you couldnt feed a chicken chicken", @"U have the minimum amount of my attention"];
+    return (NSArray<id <IGListDiffable>> *) self.loader.comments;
+    
+    
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object{
