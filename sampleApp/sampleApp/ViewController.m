@@ -20,6 +20,7 @@
 @property(nonatomic, strong) UICollectionView * collectionView;
 @property(nonatomic, strong, readonly) IGListAdapter * adapter;
 @property(nonatomic, strong) CommentLoader* loader;
+@property BOOL wasLastPic;
 @end
 
 @implementation ViewController
@@ -34,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.wasLastPic = NO;
     self.collectionView = [[UICollectionView alloc] initWithFrame: self.view.bounds
                                              collectionViewLayout: [[UICollectionViewFlowLayout alloc] init]];
     
@@ -78,9 +79,38 @@
     //QUESTION: what are these usually? JSON? array of json? one by one (eg pic, text, user, etc?)
     return (NSArray<id <IGListDiffable>> *) self.loader.comments;
     
+    //TODO: add picture array here too!!!!!!
+    
 }
 
 - (IGListSectionController *)listAdapter:(IGListAdapter *)listAdapter sectionControllerForObject:(id)object{
+    
+    
+//where to start:
+    /*
+     in objectsForListAdapter THATS where you should add the array of images to figure out whats what 
+     figure out if it passes one at a time or the whole thing, the array of loader.comments
+     figure out how to upload/save imagine on the viewcontroller screen---we'll reuse it? if we an. 
+     or upload many times to have array of same image. 
+     
+     finish image cell and image section controller -- they're empty rn 
+     
+     ask what i should do with the date on the comment
+     
+     maybe ask dustin why it maxes out to four lines
+     
+     ask andrew maybe or dustin if i can mix/match font -- or how would i wrap it. does it matter? 
+     
+     
+     
+     
+     */
+    if ([object isKindOfClass:[CommentModel class]] && self.wasLastPic == TRUE){
+        return [CommentSectionController new];
+    }
+    else if (self.wasLastPic == FALSE){
+        
+    }
     return [CommentSectionController new];
 }
 

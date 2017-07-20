@@ -13,6 +13,7 @@
 @property (nonatomic, strong) UILabel *commentLabel;
 @property (nonatomic, strong) UILabel* commentUserLabel;
 @property (nonatomic, strong) UILabel* commentTextLabel;
+
 @end
 
 
@@ -26,18 +27,18 @@
 -(instancetype)init {
     
     if (self = [super init]) {
-        [self setupSubviews];
         self.commentUserLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         self.commentTextLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+       
     }
     return self;
 }
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]){
-      //  [self setupSubviews];
         self.commentUserLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         self.commentTextLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        
     }
     return self;
 }
@@ -50,17 +51,19 @@
     
     [self.contentView configureLayoutWithBlock:^void(YGLayout *layout){
         layout.isEnabled = YES;
-        //layout.padding = YGPointValue(15.0);
-        
     }];
     
     // Comment View
+    
     UIView *commentView = [[UIView alloc] initWithFrame:CGRectZero];
     commentView.backgroundColor = [UIColor whiteColor];
     [commentView configureLayoutWithBlock:^void(YGLayout *layout){
         layout.isEnabled = TRUE;
         layout.flexDirection = YGFlexDirectionRow;
+        layout.alignItems = YGAlignStretch;
         layout.alignContent = YGAlignCenter;
+        layout.paddingLeft = YGPointValue(8.0);
+        layout.paddingRight = YGPointValue(8.0);
     }];
   
     // User label
@@ -69,17 +72,18 @@
     [self.commentUserLabel configureLayoutWithBlock:^void(YGLayout *layout) {
         layout.isEnabled = TRUE;
         layout.paddingRight = YGPointValue(3.0);
+        layout.paddingLeft = YGPointValue(5.0);
     }];
     [commentView addSubview:self.commentUserLabel];
     
     // Comment Label
     
     self.commentTextLabel.font = [UIFont systemFontOfSize:11.0];
-    self.commentTextLabel.numberOfLines = 3;
+    self.commentTextLabel.numberOfLines = 9;
     [self.commentTextLabel configureLayoutWithBlock:^void(YGLayout *layout) {
         layout.isEnabled = TRUE;
-        //layout.flexGrow = 1.0;
-      
+        layout.flexGrow = 1.0;
+        layout.flexShrink = 1.0;
     }];
     [commentView addSubview:self.commentTextLabel];
 
@@ -94,7 +98,6 @@
 }
 
 -(void)setCommentUser:(NSString *)user CommentText:(NSString *)comment {
-    
     self.commentTextLabel.text = comment;
     self.commentUserLabel.text = user;
     [self setupSubviews];

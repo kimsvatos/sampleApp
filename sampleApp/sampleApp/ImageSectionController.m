@@ -1,27 +1,25 @@
 //
-//  CommentSectionController.m
+//  ImageSectionController.m
 //  sampleApp
 //
-//  Created by Kimberly Svatos on 7/18/17.
+//  Created by Kimberly Svatos on 7/19/17.
 //  Copyright © 2017 Kimberly Svatos. All rights reserved.
 //
 
-#import "CommentSectionController.h"
+#import "ImageSectionController.h"
 #import "CommentModel.h"
-#import "CommentViewCell.h"
-@import IGListKit;
+#import "ImageCell.h"
 
-@interface CommentSectionController ()
+@interface ImageSectionController ()
 @property (nonatomic, copy)NSString *commentText;
 @property (nonatomic, strong) NSMutableArray<CommentModel *> *commentArray;
 @end
 
-@implementation CommentSectionController
+@implementation ImageSectionController
 
 - (instancetype)init {
     if (self = [super init]) {
-        self.inset = UIEdgeInsetsMake(25, 0, 0, 0);
-        self.commentArray = [NSMutableArray<CommentModel *> new];
+    
     }
     return self;
 }
@@ -35,29 +33,23 @@
     //size of entire stripes in comment
     
     
-    // NSAttribtedString -- to mix and match within string
+    
     CommentModel *model = self.commentArray[index];
     NSDictionary *attributes = @{ NSFontAttributeName: model.font};
     CGRect rect = [model.text boundingRectWithSize:CGSizeMake(containerSize.width, CGFLOAT_MAX)
-                                              options:NSStringDrawingUsesLineFragmentOrigin
-                                           attributes:attributes
-                                              context:nil];
+                                           options:NSStringDrawingUsesLineFragmentOrigin
+                                        attributes:attributes
+                                           context:nil];
     CGFloat height = rect.size.height;
-                     
+    
+    // TODO : make this a square, for insta pictures --maybe big grep a "post" in the IG list kit place
     return CGSizeMake(containerSize.width, height);
 }
 
 
 -(UICollectionViewCell *)cellForItemAtIndex:(NSInteger)index {
-    CommentViewCell *commentCell = [self.collectionContext dequeueReusableCellOfClass:CommentViewCell.class
-                                                                 forSectionController:self atIndex:index];
-    commentCell.backgroundColor = index % 2 == 0 ? [UIColor redColor] : [UIColor blueColor];
-    
-    // tell the comment cell what its user and commenttext are
-    [commentCell setCommentUser:self.commentArray[index].user CommentText:self.commentArray[index].text];
-    
-    return commentCell;
-
+    ImageCell *temp = [ImageCell new];
+    return temp;
 }
 
 //data model
