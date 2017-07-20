@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommentModel.h"
 
 @interface CommentViewCell : UICollectionViewCell
 //@property (nonatomic, copy) NSString* commentUser;
 //@property (nonatomic, copy) NSString* commentText;
 -(void)setCommentUser:(NSString *)user CommentText:(NSString *)comment;
--(void)setComment:(NSString *)comment;
+-(void)setComment:(CommentModel *)comment;
+
 //what you can see, can define properties, methods (instance and class)
 //public api
 

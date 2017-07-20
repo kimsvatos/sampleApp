@@ -35,15 +35,16 @@
     
     
     CommentModel *model = self.commentArray[index];
-    NSDictionary *attributes = @{ NSFontAttributeName: model.font};
+    NSDictionary *attributes = @{ NSFontAttributeName: model.textFont};
     CGRect rect = [model.text boundingRectWithSize:CGSizeMake(containerSize.width, CGFLOAT_MAX)
                                            options:NSStringDrawingUsesLineFragmentOrigin
                                         attributes:attributes
                                            context:nil];
     CGFloat height = rect.size.height;
-    
+    CGFloat minHeight = 50.0;
+    //CGFloat realHeight = ;
     // TODO : make this a square, for insta pictures --maybe big grep a "post" in the IG list kit place
-    return CGSizeMake(containerSize.width, height);
+    return CGSizeMake(containerSize.width, MAX(height, minHeight));
 }
 
 

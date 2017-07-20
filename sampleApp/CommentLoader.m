@@ -30,21 +30,26 @@
     comm1.user = @"hodor";
     comm1.text = @"hodor hodor";
     comm1.date = nil;
-    comm1.font = [UIFont systemFontOfSize:11.0];
+    comm1.textFont = [UIFont systemFontOfSize:11.0];
+    comm1.userFont = [UIFont boldSystemFontOfSize:11.0];
+    
     comm2.user = @"dany";
     comm2.text = @"#motherofdragons #motherofdragons #motherofdragons #motherofdragons #motherofdragons #motherofdragons #motherofdragons #motherofdragons#motherofdragons #motherofdragons #motherofdragons #motherofdragons #motherofdragons";
-    comm2.font = [UIFont systemFontOfSize:11.0];
+    comm2.textFont = [UIFont systemFontOfSize:11.0];
     comm2.date = nil;
+    comm2.userFont = [UIFont boldSystemFontOfSize:11.0];
     
     comm3.user = @"jonsnow";
     comm3.text = @"you know nothing";
     comm3.date = nil;
-    comm3.font = [UIFont systemFontOfSize:11.0];
+    comm3.textFont = [UIFont systemFontOfSize:11.0];
+    comm3.userFont = [UIFont boldSystemFontOfSize:11.0];
     
     comm4.user = @"aryastark";
     comm4.text = @"gonna go kill the queen brb";
     comm4.date = nil;
-    comm4.font = [UIFont systemFontOfSize:11.0];
+    comm4.textFont = [UIFont systemFontOfSize:11.0];
+    comm4.userFont = [UIFont boldSystemFontOfSize:11.0];
     
    // comm5.user = @"cersei";
     //comm5.text = @"h8 u all";

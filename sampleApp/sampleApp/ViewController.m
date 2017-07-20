@@ -40,20 +40,27 @@
                                              collectionViewLayout: [[UICollectionViewFlowLayout alloc] init]];
     
 
-    //self.collectionView.backgroundColor = UIColor.grayColor;
-    const CGFloat topPadding = 0.0;
+    // set up top bar of screen
+    const CGFloat topPadding = 30.0;
     const CGFloat sidePadding = 0.0;
     self.collectionView.backgroundColor = UIColor.lightGrayColor;
     [self.collectionView configureLayoutWithBlock:^(YGLayout *layout) {
         layout.isEnabled = YES;
         layout.marginTop = YGPointValue(topPadding);
         layout.marginLeft  = YGPointValue(sidePadding);
-        layout.flexDirection = YGFlexDirectionRow;
-       
+        layout.flexDirection = YGFlexDirectionColumn;
     }];
     
-    //SETUP
     [self.view addSubview:self.collectionView];
+    
+    UIView *logoView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    
+    // apply and view
+    [self.collectionView.yoga applyLayoutPreservingOrigin:YES];
+    
+    
+    // additional setup
     _loader = [CommentLoader new];
     _adapter = [[IGListAdapter alloc] initWithUpdater:[IGListAdapterUpdater new] viewController:self];
     self.adapter.collectionView = self.collectionView;

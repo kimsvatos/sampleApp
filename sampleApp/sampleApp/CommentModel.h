@@ -10,7 +10,8 @@
 @import IGListKit;
 
 @interface CommentModel : NSObject
-@property(nonatomic, strong) UIFont * _Nonnull font;
+@property(nonatomic, strong) UIFont * _Nonnull textFont;
+@property(nonatomic, strong) UIFont * _Nonnull userFont;
 @property(nonatomic, strong) NSString * _Nonnull user;
 @property(nonatomic, strong) NSString * _Nonnull text;
 @property(nonatomic, strong) NSDate * _Nullable date;
